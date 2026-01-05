@@ -1,0 +1,53 @@
+```aiignore
+프로그래머스 : 12세 이하인 여자 환자 목록 출력하기
+
+SELECT PT_NAME
+, PT_NO
+, GEND_CD
+, AGE
+, COALESCE(TLNO, 'NONE') AS TLNO
+FROM PATIENT
+WHERE GEND_CD = 'W'
+AND AGE < 13
+ORDER BY AGE DESC, PT_NAME ASC
+```
+
+```aiignore
+프로그래머스 : 재구매가 일어난 상품과 회원 리스트 구하기
+
+SELECT USER_ID
+, PRODUCT_ID
+FROM ONLINE_SALE
+GROUP BY USER_ID, PRODUCT_ID
+HAVING COUNT(1) > 1
+ORDER BY USER_ID ASC, PRODUCT_ID DESC
+```
+
+```aiignore
+프로그래머스 : 역순 정렬하기
+
+SELECT NAME
+, DATETIME
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID DESC
+```
+
+```aiignore
+프로그래머스 : 아픈 동물 찾기
+
+SELECT ANIMAL_ID
+, NAME
+FROM ANIMAL_INS
+WHERE INTAKE_CONDITION = 'Sick'
+ORDER BY ANIMAL_ID
+```
+
+```aiignore
+프로그래머스 : 어린 동물 찾기
+
+SELECT ANIMAL_ID
+, NAME
+FROM ANIMAL_INS
+WHERE INTAKE_CONDITION != 'Aged'
+ORDER BY ANIMAL_ID
+```
